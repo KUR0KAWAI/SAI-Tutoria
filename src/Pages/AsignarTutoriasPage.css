@@ -1,0 +1,368 @@
+.asignar-tutorias-page {
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    color: #2d3748;
+    max-width: 100%;
+    margin: 0;
+}
+
+/* Page Header Styled - Compact Version */
+/* Page Header Styled - Compact Version */
+.page-header-styled {
+    margin-bottom: 24px;
+}
+
+.header-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 4px;
+}
+
+.page-title {
+    font-size: 1.4rem;
+    color: #4a5568;
+    font-weight: 600;
+    margin: 0;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    color: #999;
+    font-weight: 400;
+}
+
+.breadcrumb {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+/* Messages Area */
+.message-area {
+    margin-top: 10px;
+    /* Reduced from 16px */
+    min-height: 0;
+    /* Remove fixed height to collapse gap */
+}
+
+.alert-box {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 0.3s ease;
+    margin-bottom: 10px;
+    /* Add space only when alert exists */
+}
+
+.alert-success {
+    background-color: #C6F6D5;
+    color: #276749;
+    border: 1px solid #9AE6B4;
+}
+
+.alert-error {
+    background-color: #FED7D7;
+    color: #C53030;
+    border: 1px solid #FEB2B2;
+}
+
+/* Card General */
+.filter-card,
+.results-card,
+.history-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.card-header-styled {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.card-header-styled h3 {
+    font-size: 1.2rem;
+    color: #2d3748;
+    margin: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-header-styled h3 i {
+    color: #1ECD97;
+}
+
+/* Filters */
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    font-size: 0.95rem;
+    color: #2d3748;
+    transition: all 0.2s;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #1ECD97;
+    background-color: #fff;
+}
+
+.btn-filter {
+    padding: 10px 24px;
+    background-color: #1ECD97;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 42px;
+    /* Match select height */
+}
+
+.btn-filter:hover {
+    background-color: #10B981;
+    transform: translateY(-1px);
+}
+
+.btn-filter:disabled {
+    background-color: #cbd5e0;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Collapsible Sections */
+.jornada-section {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.jornada-header {
+    background-color: #f7fafc;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.jornada-header:hover {
+    background-color: #edf2f7;
+}
+
+.jornada-title {
+    font-weight: 600;
+    color: #2d3748;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge-count {
+    background-color: #1ECD97;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    color: #a0aec0;
+    transition: transform 0.3s;
+}
+
+.toggle-icon.open {
+    transform: rotate(180deg);
+}
+
+.jornada-content {
+    background-color: #fff;
+    padding: 0;
+    display: none;
+}
+
+.jornada-content.open {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+/* Table Styles */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th {
+    text-align: left;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    color: #718096;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.custom-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #edf2f7;
+    color: #4a5568;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.custom-table tr:hover td {
+    background-color: #f8fafc;
+}
+
+.observation-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.btn-assign,
+.btn-notify {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-assign {
+    background-color: #ebf8ff;
+    color: #3182ce;
+}
+
+.btn-assign:hover {
+    background-color: #bee3f8;
+}
+
+.btn-notify {
+    background-color: #f0fff4;
+    color: #38a169;
+}
+
+.btn-notify:hover {
+    background-color: #c6f6d5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.status-pendiente {
+    background-color: #FEFCBF;
+    color: #975A16;
+}
+
+.status-realizada {
+    background-color: #C6F6D5;
+    color: #276749;
+}
+
+.status-en {
+    /* For "En curso" */
+    background-color: #EBF8FF;
+    color: #2B6CB0;
+}
+
+.status-inasistencia,
+.status-incompleta {
+    background-color: #FED7D7;
+    color: #C53030;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-filter {
+        width: 100%;
+    }
+}

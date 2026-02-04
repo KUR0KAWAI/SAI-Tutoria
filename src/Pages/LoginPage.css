@@ -1,0 +1,259 @@
+@keyframes loginSlideShow {
+    0% {
+        background-image: url("https://sai.utb.edu.ec/images/1.jpg");
+    }
+
+    16.66% {
+        background-image: url("https://sai.utb.edu.ec/images/2.jpg");
+    }
+
+    33.33% {
+        background-image: url("https://sai.utb.edu.ec/images/3.jpg");
+    }
+
+    50% {
+        background-image: url("https://sai.utb.edu.ec/images/4.jpg");
+    }
+
+    66.66% {
+        background-image: url("https://sai.utb.edu.ec/images/5.jpg");
+    }
+
+    83.33% {
+        background-image: url("https://sai.utb.edu.ec/images/6.jpg");
+    }
+
+    100% {
+        background-image: url("https://sai.utb.edu.ec/images/1.jpg");
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-page-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+.login-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+}
+
+.manuals-link {
+    font-family: 'Lato', sans-serif;
+    color: #00330F;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.manuals-link:hover {
+    background-color: #00330F;
+    color: #fff;
+}
+
+.university-logo {
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Background & Overlays */
+
+/* CAPA 1: Fondo (Slideshow) */
+.login-background-slideshow {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    animation: loginSlideShow 36s infinite;
+    z-index: 1;
+}
+
+/* CAPA 2: Cuadro negro translúcido (Mesh overlay) */
+.login-mesh-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.589);
+    /* Aumentada la opacidad para oscurecer más el fondo */
+    z-index: 2;
+}
+
+/* CAPA 3: Formulario (Content Layer) */
+.login-content-layer {
+    position: relative;
+    z-index: 3;
+    /* Encima de todo */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15%;
+    padding-top: 64px;
+    /* Altura del header */
+}
+
+.login-form-panel {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.login-title-green {
+    color: #1ECD97;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.info-box {
+    background-color: #E6FAFE;
+    color: #09535D;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.info-box p {
+    margin-bottom: 5px;
+}
+
+/* Form Styles */
+.login-form-new {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group-new label {
+    display: block;
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+.input-wrapper-new {
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    height: 48px;
+}
+
+.input-wrapper-new i {
+    color: #1ECD97;
+    font-size: 1.2rem;
+    margin-right: 12px;
+}
+
+.input-wrapper-new input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+}
+
+.password-toggle {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    padding: 5px;
+}
+
+.password-toggle:hover {
+    opacity: 0.7;
+}
+
+.login-btn-new {
+    background: transparent;
+    border: 2px solid #1ECD97;
+    color: #1ECD97;
+    padding: 14px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-btn-new:hover {
+    background: #1ECD97;
+    color: #fff;
+}
+
+.login-error-msg {
+    color: #ff4d4f;
+    background: rgba(255, 77, 79, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* Footer Actions */
+.login-footer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+    align-items: center;
+}
+
+.action-pill {
+    background: transparent;
+    border: 1px solid #1ECD97;
+    color: #1ECD97;
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+}
+
+.action-pill:hover {
+    background: #1ECD97;
+    color: #fff;
+}

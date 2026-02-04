@@ -1,0 +1,273 @@
+:root {
+    --primary-green: #23A7A2;
+    --bg-light: #F2F6F9;
+    --text-gray: #666;
+    --text-light: #999;
+}
+
+.inicio-page {
+    padding: 0;
+    animation: fadeIn 0.5s ease;
+}
+
+.inicio-header {
+    margin-bottom: 24px;
+}
+
+.header-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.page-title {
+    color: #4a5568;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.page-subtitle {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.breadcrumb {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.inicio-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Global Card Style */
+.card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: none;
+}
+
+/* Sidebar Info */
+.teacher-card {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.teacher-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teacher-name {
+    font-size: 1.15rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.teacher-role {
+    color: var(--primary-green);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.teacher-chips {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.chip {
+    background-color: var(--primary-green);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.teacher-internal-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.menu-item {
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.menu-item i {
+    font-size: 1rem;
+}
+
+.menu-item.active {
+    background-color: var(--bg-light);
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+.menu-item:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-green);
+}
+
+.links-small-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.small-link {
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Dashboard Content Cards */
+.card-header-green {
+    background-color: var(--primary-green);
+    color: #fff;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header-green h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.card-header-green .header-text span {
+    font-size: 0.7rem;
+    opacity: 0.9;
+    display: block;
+}
+
+.card-header-green i {
+    font-size: 1.3rem;
+}
+
+.card-body {
+    padding: 24px;
+    background-color: #FFFFFF;
+}
+
+.card-body.no-padding {
+    padding: 0;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+.biblioteca-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.biblio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.biblio-item img {
+    height: 120px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.biblio-item span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    max-width: 120px;
+}
+
+.mision-vision-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.enlaces-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: center;
+}
+
+.enlaces-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enlaces-col img {
+    max-width: 100%;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.col-1 {
+    flex-direction: column;
+    gap: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

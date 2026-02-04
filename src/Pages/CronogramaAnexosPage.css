@@ -1,0 +1,449 @@
+.cronograma-page {
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    color: #2d3748;
+}
+
+/* Page Header Styled - Compact Version (Shared with AsignarTutorias) */
+.page-header-styled {
+    margin-bottom: 24px;
+}
+
+.header-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 4px;
+}
+
+.page-title {
+    font-size: 1.4rem;
+    color: #4a5568;
+    font-weight: 600;
+    margin: 0;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    color: #999;
+    font-weight: 400;
+}
+
+.breadcrumb {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+/* Messages Area */
+.message-area {
+    margin-top: 10px;
+    min-height: 0;
+}
+
+.alert-box {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.alert-success {
+    background-color: #C6F6D5;
+    color: #276749;
+    border: 1px solid #9AE6B4;
+}
+
+.alert-error {
+    background-color: #FED7D7;
+    color: #C53030;
+    border: 1px solid #FEB2B2;
+}
+
+/* Cards */
+.form-card,
+.table-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    /* Tailwind-like shadow */
+    padding: 0;
+    margin-bottom: 24px;
+    border: none;
+    /* Shadow defines the edge now */
+    overflow: hidden;
+}
+
+.form-grid {
+    padding: 24px;
+    /* Add padding back to content */
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    gap: 20px;
+    align-items: end;
+}
+
+.table-responsive {
+    padding: 16px 24px;
+}
+
+/* Card Headers - Green Theme */
+.card-header-styled {
+    background-color: #23A7A2;
+    /* Primary Green from reference */
+    color: #fff;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    /* Rounded top corners */
+}
+
+.card-header-styled h3 {
+    font-size: 1rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.card-header-styled h3 i {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* Export PDF Button */
+.btn-export-pdf {
+    background-color: #ffffff;
+    color: #2C7A7B;
+    border: 1px solid #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.btn-export-pdf:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-export-pdf:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-export-pdf i {
+    font-size: 1rem;
+}
+
+/* Form */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: end;
+    padding-bottom: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.form-input {
+    flex: 1;
+    height: 100%;
+    padding: 0 12px;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    font-size: 0.9rem;
+    color: #111827;
+    width: 100%;
+    box-shadow: none !important;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+    height: 44px;
+    overflow: hidden;
+}
+
+.input-wrapper:hover {
+    border-color: #9ca3af;
+}
+
+.input-wrapper:focus-within {
+    border-color: #1ECD97;
+    box-shadow: 0 0 0 3px rgba(30, 205, 151, 0.1);
+}
+
+.input-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 1.1rem;
+    pointer-events: none;
+    background-color: #f9fafb;
+    border-right: 1px solid #e5e7eb;
+}
+
+.input-wrapper:focus-within .input-icon {
+    color: #10B981;
+    border-color: #1ECD97;
+}
+
+/* Specific adjustment for select */
+.form-input.select-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 14px;
+    cursor: pointer;
+    padding-right: 32px;
+}
+
+
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.btn-save,
+.btn-clean {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 42px;
+    /* Match input height roughly */
+}
+
+.btn-save {
+    background-color: #1ECD97;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-save:hover {
+    background-color: #10B981;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+}
+
+.btn-clean {
+    background-color: #edf2f7;
+    color: #4a5568;
+}
+
+.btn-clean:hover {
+    background-color: #e2e8f0;
+}
+
+/* Table */
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid #E0E6F0;
+    /* Elevated shadow on table itself */
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.custom-table th {
+    text-align: center;
+    padding: 16px;
+    /* Muted teal as requested */
+    background-color: #2C7A7B;
+    color: #ffffff;
+    border-bottom: 1px solid #E0E6F0;
+    border-right: 1px solid #E0E6F0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Rounded corners for header */
+.custom-table thead tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.custom-table thead tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.custom-table td {
+    padding: 16px;
+    border-bottom: 1px solid #E0E6F0;
+    border-right: 1px solid #E0E6F0;
+    color: #4a5568;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.custom-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Rounded corners for last row */
+.custom-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.custom-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+.custom-table th:last-child,
+.custom-table td:last-child {
+    border-right: none;
+}
+
+/* Date Cell Specifics */
+.date-cell {
+    text-align: center;
+    font-weight: 600;
+    vertical-align: middle;
+    background-color: #fff;
+    color: #2d3748;
+    white-space: nowrap;
+    /* Prevent date wrapping */
+}
+
+.desc-cell {
+    text-align: left;
+    vertical-align: middle;
+}
+
+.actions-cell {
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+}
+
+/* Hover effect */
+.custom-table tr:hover td {
+    background-color: #f8fafc;
+}
+
+/* Ensure merged cells maintain white background if desired, 
+   or allow hover to highlight the row. 
+   Usually for merged cells, hover effects can be tricky. 
+   Keeping it simple. 
+*/
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-edit {
+    background-color: #ebf8ff;
+    color: #3182ce;
+}
+
+.btn-edit:hover {
+    background-color: #bee3f8;
+}
+
+.btn-delete {
+    background-color: #fff5f5;
+    color: #e53e3e;
+}
+
+.btn-delete:hover {
+    background-color: #fed7d7;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        width: 100%;
+    }
+
+    .btn-save,
+    .btn-clean {
+        flex: 1;
+    }
+}

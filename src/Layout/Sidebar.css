@@ -1,0 +1,317 @@
+.sidebar {
+    width: 280px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Back in the flex flow */
+    margin: 20px 0 20px 20px;
+    /* Floating gap */
+    z-index: 100;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    /* Don't let it shrink */
+}
+
+.sidebar.collapsed {
+    width: 72px;
+    overflow: visible;
+    /* CRITICAL: Allow items to pop out */
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    flex: 1;
+    overflow: visible;
+    /* Optimization: no scroll, items pop out */
+}
+
+/* Hide scrollbar if any */
+.sidebar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-nav {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+    gap: 12px;
+    white-space: normal;
+    /* Allow wrapping */
+    position: relative;
+    background-color: #fff;
+    /* Solid bg so it covers content on pop-out */
+    z-index: 1;
+}
+
+.sidebar.collapsed .nav-item {
+    width: 72px;
+    padding: 12px 20px;
+    justify-content: flex-start;
+    border-radius: 0 12px 12px 0;
+    white-space: nowrap;
+    /* Force single line when collapsed */
+    /* Match sidebar roundness */
+}
+
+.sidebar.collapsed .nav-item span {
+    opacity: 0;
+    transition: opacity 0.2s;
+    padding-left: 10px;
+}
+
+/* POP-OUT HOVER EXPANSION */
+.sidebar.collapsed .nav-item:hover {
+    width: 280px;
+    background-color: #fff;
+    color: #1a73e8;
+    box-shadow: 10px 5px 25px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    border-radius: 0 12px 12px 0;
+    /* Unified: Flat left edge for all hover states */
+    white-space: normal;
+    /* Allow text to wrap on hover */
+    overflow: hidden;
+    /* Clip growing text for smooth reveal */
+    /* POPS OUT without moving content */
+}
+
+.sidebar.collapsed .nav-item:hover span {
+    min-width: 196px;
+    /* Force full layout immediately to prevent reflow jitter */
+}
+
+.sidebar.collapsed .nav-item:not(:hover) {
+    overflow: hidden;
+    /* Keep text hidden when not hovering */
+}
+
+.sidebar.collapsed .nav-item:hover span {
+    opacity: 1;
+}
+
+.nav-item i {
+    font-size: 1.4rem;
+    min-width: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item:hover {
+    background-color: #f1f5f9;
+}
+
+.nav-item.active {
+    background-color: #eef2ff;
+    color: #1a73e8;
+    border-left-color: #1a73e8;
+    font-weight: 500;
+}
+
+.nav-item.active i {
+    color: #1a73e8;
+}
+
+.submenu-container {
+    margin-top: 5px;
+    position: relative;
+    /* Anchor for absolute list in collapsed mode */
+}
+
+.submenu-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    color: #4a5568;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    gap: 12px;
+}
+
+.trigger-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sidebar.collapsed .submenu-trigger {
+    width: 72px;
+    padding: 12px 20px;
+    overflow: hidden;
+}
+
+.sidebar.collapsed .submenu-trigger:hover {
+    width: 280px;
+    background-color: #fff;
+    border-radius: 12px;
+    z-index: 2000;
+    box-shadow: 10px 5px 25px rgba(0, 0, 0, 0.1);
+    white-space: normal;
+    /* Ensure consistent wrapping behavior */
+    overflow: hidden;
+}
+
+.sidebar.collapsed .submenu-trigger:hover span {
+    display: block;
+    padding-left: 10px;
+    min-width: 196px;
+    /* Prevent reflow */
+}
+
+.sidebar.collapsed .submenu-trigger span,
+.sidebar.collapsed .submenu-trigger>i:last-child {
+    display: none;
+}
+
+
+
+
+/* Submenu Container Hover Logic for Collapsed State */
+.sidebar.collapsed .submenu-container:hover {
+    z-index: 2100;
+}
+
+/* Expand trigger when container is hovered (keeps it open when moving to list) */
+.sidebar.collapsed .submenu-container:hover .submenu-trigger {
+    width: 280px;
+    background-color: #fff;
+    border-radius: 12px 12px 0 0;
+    /* Connect to list */
+    white-space: normal;
+    overflow: hidden;
+    box-shadow: 10px 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed .submenu-container:hover .submenu-trigger span,
+.sidebar.collapsed .submenu-container:hover .submenu-trigger>i:last-child {
+    display: block;
+    min-width: 196px;
+    padding-left: 10px;
+    opacity: 1;
+    /* Ensure text is visible even if button is not directly hovered */
+}
+
+/* Show the list absolutely positioned */
+.sidebar.collapsed .submenu-container:hover .submenu-list {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 280px;
+    background-color: #fff;
+    /* Use white to match popout */
+    box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 12px 12px;
+    z-index: 2000;
+    padding: 0 0 8px 0;
+}
+
+.sidebar.collapsed .submenu-list {
+    display: none;
+}
+
+.submenu-list {
+    background-color: #f8fafc;
+    padding: 5px 0;
+}
+
+.sub-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px 10px 48px;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    gap: 10px;
+}
+
+.sub-item i {
+    font-size: 1.1rem;
+    width: 20px;
+}
+
+.sub-item:hover {
+    color: #1a73e8;
+    background-color: #f1f5f9;
+}
+
+.sub-item.active {
+    color: #1a73e8;
+    font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .sidebar {
+        position: fixed;
+        top: 75px;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+        width: 280px !important;
+        transform: translateX(-100%);
+        margin: 0;
+    }
+
+    .main-layout.sidebar-collapsed .sidebar {
+        transform: translateX(0);
+    }
+
+    .sidebar.collapsed .nav-item {
+        width: 100% !important;
+        position: relative !important;
+    }
+
+    .sidebar.collapsed .nav-item span {
+        opacity: 1 !important;
+    }
+}
+
+/* Role Labels in Submenu */
+.role-group {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.role-group:first-child {
+    padding-top: 0;
+}
+
+.role-label {
+    display: block;
+    padding: 4px 24px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+/* Add a separator if multiple groups */
+.role-group+.role-group {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 5px;
+    padding-top: 10px;
+}
